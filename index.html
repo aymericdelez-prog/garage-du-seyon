@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garage du Seyon — Dombresson</title>
+  <meta name="description" content="Garage du Seyon SA à Dombresson (Val-de-Ruz) : vente de véhicules d'exception, atelier mécanique, modifications et géométrie.">
+  <meta name="theme-color" content="#ffffff">
+  <script>document.documentElement.classList.add('js');</script>
+  <meta property="og:title" content="Garage du Seyon — Dombresson">
+  <meta property="og:description" content="Vente, atelier et préparation de véhicules d'exception au cœur du Val-de-Ruz.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "Garage du Seyon SA",
+      "url": "https://www.garageduseyon.ch",
+      "telephone": "+41 32 853 28 40",
+      "email": "info@garageduseyon.ch",
+      "address": { "@type": "PostalAddress", "streetAddress": "Route du Seyon 9", "postalCode": "2056", "addressLocality": "Dombresson", "addressRegion": "NE", "addressCountry": "CH" },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "07:30", "closes": "12:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "13:30", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "12:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:30", "closes": "17:00" }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-out" viewBox="0 0 16 16"><path d="M6 3.5h6.5V10M12.5 3.5 4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.3a12 12 0 0 0 6.6 6.6l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m4.5 7 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.5 5.3 5.8.7-4.3 4 1.1 5.8L12 16.6l-5.1 2.8 1.1-5.8-4.3-4 5.8-.7Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- En-tête -->
+  <header class="nav" id="nav">
+    <div class="nav__in">
+      <a class="nav__brand" href="#top" aria-label="Garage du Seyon — accueil">
+        <span class="nav__s" aria-hidden="true">S</span>
+        <span class="nav__name">Garage du Seyon</span>
+      </a>
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="#garage" data-nav="garage">Le garage</a>
+        <a href="#occasions" data-nav="occasions">Occasions</a>
+        <a href="#atelier" data-nav="atelier">Atelier</a>
+        <a href="#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="nav__end">
+        <a class="nav__tel" href="tel:+41328532840"><svg><use href="#i-phone"/></svg><span>032 853 28 40</span></a>
+        <a class="pill pill--sm" href="#contact">Prendre rendez-vous</a>
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+      </div>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <a href="#garage">Le garage</a>
+      <a href="#occasions">Occasions</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#contact">Contact</a>
+      <a class="menu__tel" href="tel:+41328532840">032 853 28 40</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================================================ VITRINE -->
+    <section class="cx" id="accueil" aria-label="Garage du Seyon, voitures d'exception">
+      <article class="chap chap--hero chap--light" id="vitrine">
+        <div class="chap__pin">
+          <div class="chap__head">
+            <p class="eyebrow cx-hero__eyebrow" data-hero>Garage du Seyon · Dombresson</p>
+            <h1 class="display" data-hero><span class="ln"><span>Voitures d’exception.</span></span></h1>
+            <p class="lead cx-hero__lead" data-hero><span class="ln"><span>Une sélection, un atelier, une même exigence.</span></span></p>
+          </div>
+          <figure class="chap__frame">
+            <!-- une seule image : les vues suivantes sont des mouvements de caméra (point visé u,v en fraction de l'image ; zoom) -->
+            <div class="chap__media" data-shots="0.655,0.62,2;0.5,0.585,2.5">
+              <img class="chap__img" src="https://images.unsplash.com/photo-1776166424219-96413114e1cc?auto=format&amp;fit=crop&amp;w=2560&amp;q=80" srcset="https://images.unsplash.com/photo-1776166424219-96413114e1cc?auto=format&amp;fit=crop&amp;w=1280&amp;q=80 1280w, https://images.unsplash.com/photo-1776166424219-96413114e1cc?auto=format&amp;fit=crop&amp;w=1920&amp;q=80 1920w, https://images.unsplash.com/photo-1776166424219-96413114e1cc?auto=format&amp;fit=crop&amp;w=2560&amp;q=80 2560w, https://images.unsplash.com/photo-1776166424219-96413114e1cc?auto=format&amp;fit=crop&amp;w=3840&amp;q=80 3840w" sizes="200vw" alt="Lamborghini Sián blanc nacré en studio (image de synthèse)" decoding="async" data-i="0" fetchpriority="high">
+            </div>
+            <figcaption class="chap__copies">
+              <div class="chap__copy" data-s="0">
+                <p class="chap__kicker"><span class="num">01</span> · Vente</p>
+                <h2 class="chap__title">La sélection.</h2>
+                <p class="chap__lead">Lamborghini, Porsche, Aston Martin, Bentley, Audi RS… et des voitures de tous les jours.</p>
+                <a class="tlink" href="#occasions">Voir nos occasions <svg><use href="#i-arrow"/></svg></a>
+              </div>
+              <div class="chap__copy" data-s="1">
+                <p class="chap__kicker"><span class="num">02</span> · Atelier</p>
+                <h2 class="chap__title">L’atelier.</h2>
+                <p class="chap__lead">Réparation, entretien du châssis, géométrie et préparation à l’expertise, à Dombresson.</p>
+                <a class="tlink" href="#atelier">Découvrir l’atelier <svg><use href="#i-arrow"/></svg></a>
+              </div>
+              <div class="chap__copy" data-s="2">
+                <p class="chap__kicker"><span class="num">03</span> · Modifications</p>
+                <h2 class="chap__title">Le détail.</h2>
+                <p class="chap__lead">Jantes, échappements, suspensions&nbsp;: votre voiture, à votre goût.</p>
+                <a class="tlink" href="#contact">Prendre rendez-vous <svg><use href="#i-arrow"/></svg></a>
+              </div>
+            </figcaption>
+            <div class="chap__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============================================================ LE GARAGE -->
+    <section class="intro" id="garage">
+      <div class="wrap">
+        <p class="eyebrow reveal">Le garage</p>
+        <p class="statement" id="statement">Vente, atelier, préparation. Depuis Dombresson, au cœur du Val-de-Ruz, nous prenons soin des voitures d'exception — et de toutes les autres.</p>
+        <div class="facts">
+          <div class="fact reveal"><b><span data-count="17" id="fact-stock">17</span></b><span>véhicules en vitrine</span></div>
+          <div class="fact reveal"><b><span data-count="4.4" data-dec="1">4,4</span><small>/5</small></b><span class="stars" aria-label="Note Google 4,4 sur 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg class="half"><use href="#i-star"/></svg></span><span>74 avis Google</span></div>
+          <div class="fact reveal"><b>Lun–Sam</b><span>vente du lundi au vendredi, le samedi sur rendez-vous</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ OCCASIONS -->
+    <section class="stock" id="occasions">
+      <div class="wrap">
+        <div class="sechead">
+          <div>
+            <p class="eyebrow reveal">En vitrine</p>
+            <h2 class="h2 reveal">Nos occasions du moment.</h2>
+          </div>
+          <a class="tlink reveal" href="https://www.autoscout24.ch/fr/s/seller-60799" target="_blank" rel="noopener">Tout le stock sur AutoScout24 <svg><use href="#i-out"/></svg></a>
+        </div>
+        <div class="chips reveal" role="tablist" aria-label="Filtrer les véhicules" id="chips">
+          <button class="chip is-on" role="tab" aria-selected="true" data-f="all">Tout <span></span></button>
+          <button class="chip" role="tab" aria-selected="false" data-f="sport">Sportives &amp; GT <span></span></button>
+          <button class="chip" role="tab" aria-selected="false" data-f="family">Berlines &amp; breaks <span></span></button>
+          <button class="chip" role="tab" aria-selected="false" data-f="other">SUV &amp; utilitaires <span></span></button>
+        </div>
+        <div class="grid" id="stock-grid"></div>
+        <p class="note">Annonces relevées sur AutoScout24 le 9 octobre 2026 — sous réserve de vente. Prix TTC en francs suisses.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ ATELIER -->
+    <section class="atelier" id="atelier">
+      <div class="wrap">
+        <div class="sechead">
+          <div>
+            <p class="eyebrow reveal">Atelier</p>
+            <h2 class="h2 reveal">Tout pour votre voiture,<br class="br-d"> sous un même toit.</h2>
+          </div>
+        </div>
+        <div class="bento">
+          <article class="card card--xl card--photo reveal">
+            <div class="card__media"><img src="https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" srcset="https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?auto=format&amp;fit=crop&amp;w=1800&amp;q=80 1800w" sizes="(max-width: 600px) 92vw, (max-width: 1080px) 92vw, 50vw" alt="Mercedes-Benz de collection et Bentley moderne exposées dans un showroom vitré" loading="lazy" decoding="async" style="object-position:50% 70%"></div>
+            <div class="card__body">
+              <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle class="st" cx="16" cy="24" r="7.5"/><path class="st dr" d="M23.5 24H41m-5 0v5m-5-5v3.5"/><circle class="st" cx="14" cy="24" r="1.6"/></svg>
+              <h3>Vente</h3>
+              <p>Véhicules neufs et d'occasion, sportives, GT et voitures du quotidien, sélectionnés et préparés par nos soins.</p>
+              <a class="tlink tlink--light" href="#occasions">Voir les véhicules <svg><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card reveal" data-spot>
+            <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path class="st" d="M29.5 9.5a8 8 0 0 0-9.7 10.6L9.6 30.3a3.6 3.6 0 0 0 5.1 5.1l10.2-10.2a8 8 0 0 0 10.6-9.7l-4.6 4.6-4.4-1.2-1.2-4.4Z"/><path class="st dr" d="M12.2 33.2 22 23.4"/></svg>
+            <h3>Réparation &amp; entretien</h3>
+            <p>Service de réparation, travaux de mécanique et entretien du châssis.</p>
+          </article>
+          <article class="card reveal" data-spot>
+            <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect class="st" x="11" y="8.5" width="26" height="32" rx="4"/><path class="st" d="M18 8.5v-1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/><path class="st dr" d="m17.5 25 4.5 4.5 9-9"/></svg>
+            <h3>Préparation à l'expertise</h3>
+            <p>Nous préparons votre véhicule avant son passage au contrôle.</p>
+          </article>
+          <article class="card card--tall card--photo card--dark reveal">
+            <div class="card__media"><img src="https://images.unsplash.com/photo-1706288456410-f9b4467a0bd6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" srcset="https://images.unsplash.com/photo-1706288456410-f9b4467a0bd6?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1706288456410-f9b4467a0bd6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1706288456410-f9b4467a0bd6?auto=format&amp;fit=crop&amp;w=1800&amp;q=80 1800w" sizes="(max-width: 600px) 92vw, (max-width: 1080px) 46vw, 25vw" alt="Combiné fileté noir et doré, ressort et amortisseur réglables" loading="lazy" decoding="async" style="object-position:50% 40%"></div>
+            <div class="card__body">
+              <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path class="st" d="M14 8h20M14 40h20"/><path class="st dr" d="M16 8c0 0 16 2.5 16 5S16 15.5 16 18s16 2.5 16 5-16 2.5-16 5 16 2.5 16 5-16 2.5-16 5"/></svg>
+              <h3>Modifications</h3>
+              <p>Commande et pose de tiges filetées, ressorts, échappements et jantes.</p>
+            </div>
+          </article>
+          <article class="card card--wide reveal" data-spot>
+            <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle class="st" cx="24" cy="24" r="15"/><path class="st" d="M24 6v6M24 36v6M6 24h6M36 24h6"/><path class="st dr" d="M24 24 33 15"/><circle class="st" cx="24" cy="24" r="2.5"/></svg>
+            <h3>Géométrie</h3>
+            <p>Service de géométrie pour une tenue de route irréprochable.</p>
+            <button class="tlink" type="button" data-open="tarifs" aria-haspopup="dialog">Tarifs géométrie <svg><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="card reveal" data-spot>
+            <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle class="st" cx="24" cy="24" r="16"/><circle class="st" cx="24" cy="24" r="9"/><path class="st dr" d="M24 15v18M15 24h18M17.6 17.6l12.8 12.8M30.4 17.6 17.6 30.4"/></svg>
+            <h3>Pneus</h3>
+            <p>Stockage de vos pneus d'été ou d'hiver, d'une saison à l'autre.</p>
+          </article>
+          <article class="card reveal" data-spot>
+            <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path class="st" d="M17 8.5c-2 0-3.5 1.6-3.2 3.6l2.6 17.4h15l1.1-5.6c.4-2-1.2-3.9-3.2-3.9h-4.8L21.6 11c-.3-1.5-1.6-2.5-3.1-2.5Z"/><path class="st dr" d="M16.4 29.5 14 39.5M31.4 29.5l2.4 10M12 39.5h24"/></svg>
+            <h3>Accessoires</h3>
+            <p>Protection de l'intérieur, audio, navigation GPS : accessoires sur demande.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ SHOWROOM -->
+    <section class="showroom" id="showroom">
+      <div class="showroom__pin">
+        <figure class="showroom__frame" id="showroom-frame">
+          <img src="https://images.unsplash.com/photo-1763292393629-ceecc5d9e5af?auto=format&amp;fit=crop&amp;w=1920&amp;q=80" srcset="https://images.unsplash.com/photo-1763292393629-ceecc5d9e5af?auto=format&amp;fit=crop&amp;w=1280&amp;q=80 1280w, https://images.unsplash.com/photo-1763292393629-ceecc5d9e5af?auto=format&amp;fit=crop&amp;w=1920&amp;q=80 1920w, https://images.unsplash.com/photo-1763292393629-ceecc5d9e5af?auto=format&amp;fit=crop&amp;w=2560&amp;q=80 2560w, https://images.unsplash.com/photo-1763292393629-ceecc5d9e5af?auto=format&amp;fit=crop&amp;w=3200&amp;q=80 3200w" sizes="100vw" alt="Lamborghini jaune portes ouvertes dans un hall d’exposition épuré" loading="lazy" decoding="async">
+        </figure>
+        <div class="showroom__text">
+          <p class="eyebrow eyebrow--light">Le showroom</p>
+          <h2 class="h2 h2--light">Venez les voir de près.</h2>
+          <p class="lead lead--light">Route du Seyon 9, 2056 Dombresson.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="sechead">
+          <div>
+            <p class="eyebrow reveal">Contact</p>
+            <h2 class="h2 reveal">Passez nous voir.</h2>
+          </div>
+        </div>
+        <div class="contact__grid">
+          <div class="panel panel--hours reveal">
+            <div class="status" id="status"><i></i><span>Horaires</span></div>
+            <div class="hours">
+              <div class="hours__col">
+                <h3>Atelier</h3>
+                <ul id="hours-atelier"></ul>
+              </div>
+              <div class="hours__col">
+                <h3>Vente</h3>
+                <ul id="hours-vente"></ul>
+                <p class="hours__note">* Le samedi, uniquement sur rendez-vous.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel--info reveal">
+            <a class="line" href="https://www.google.com/maps/dir/?api=1&amp;destination=Garage+du+Seyon+SA%2C+Route+du+Seyon+9%2C+2056+Dombresson" target="_blank" rel="noopener">
+              <svg class="line__ico"><use href="#i-pin"/></svg>
+              <span><b>Route du Seyon 9</b><small>2056 Dombresson · Val-de-Ruz</small></span>
+              <em>Itinéraire <svg><use href="#i-out"/></svg></em>
+            </a>
+            <a class="line" href="tel:+41328532840">
+              <svg class="line__ico"><use href="#i-phone"/></svg>
+              <span><b>032 853 28 40</b><small>Téléphone</small></span>
+              <em>Appeler <svg><use href="#i-arrow"/></svg></em>
+            </a>
+            <a class="line" href="tel:+41796722191">
+              <svg class="line__ico"><use href="#i-phone"/></svg>
+              <span><b>079 672 21 91</b><small>Mobile</small></span>
+              <em>Appeler <svg><use href="#i-arrow"/></svg></em>
+            </a>
+            <a class="line" href="mailto:info@garageduseyon.ch">
+              <svg class="line__ico"><use href="#i-mail"/></svg>
+              <span><b>info@garageduseyon.ch</b><small>E-mail</small></span>
+              <em>Écrire <svg><use href="#i-arrow"/></svg></em>
+            </a>
+          </div>
+          <form class="panel panel--form reveal" id="form" novalidate>
+            <h3>Une question, un rendez-vous ?</h3>
+            <div class="seg" role="radiogroup" aria-label="Sujet">
+              <label><input type="radio" name="sujet" value="Achat d'un véhicule" checked><span>Achat</span></label>
+              <label><input type="radio" name="sujet" value="Atelier / entretien"><span>Atelier</span></label>
+              <label><input type="radio" name="sujet" value="Modification"><span>Modification</span></label>
+              <label><input type="radio" name="sujet" value="Autre demande"><span>Autre</span></label>
+            </div>
+            <div class="fields">
+              <label class="field"><input name="nom" type="text" autocomplete="name" required placeholder=" "><span>Nom</span></label>
+              <label class="field"><input name="email" type="email" autocomplete="email" required placeholder=" "><span>E-mail</span></label>
+              <label class="field"><input name="tel" type="tel" autocomplete="tel" placeholder=" "><span>Téléphone (facultatif)</span></label>
+              <label class="field field--area"><textarea name="message" rows="4" required placeholder=" "></textarea><span>Votre message</span></label>
+            </div>
+            <div class="form__end">
+              <button class="pill" type="submit">Envoyer</button>
+              <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Tarifs géométrie (remplace le fichier Word) -->
+  <dialog class="sheet" id="tarifs" aria-labelledby="tarifs-title">
+    <div class="sheet__in">
+      <button class="sheet__close" type="button" data-close aria-label="Fermer"><i></i><i></i></button>
+      <p class="eyebrow"><span class="num">Atelier</span> · Géométrie</p>
+      <h2 class="h2" id="tarifs-title">Tarifs géométrie.</h2>
+      <ul class="tarifs">
+        <li><span>Contrôle géométrie</span><b>CHF 125.–</b></li>
+        <li><span>Réglage parallélisme</span><b>CHF 150.–</b></li>
+        <li><span>Géométrie complète</span><b>CHF 180.–</b></li>
+        <li><span>Géométrie complète 4×4</span><b>CHF 200.–</b></li>
+      </ul>
+      <p class="sheet__note">Prix TVA incluse. Les prix ci-dessus peuvent être plus élevés selon le véhicule.</p>
+      <div class="sheet__cta">
+        <a class="pill" href="#contact" data-close>Prendre rendez-vous</a>
+        <a class="tlink" href="tel:+41328532840">032 853 28 40 <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <span class="foot__s" aria-hidden="true">S</span>
+          <p>Garage du Seyon SA<br>Route du Seyon 9<br>2056 Dombresson</p>
+        </div>
+        <nav class="foot__nav" aria-label="Pied de page">
+          <a href="#garage">Le garage</a>
+          <a href="#occasions">Occasions</a>
+          <a href="#atelier">Atelier</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="foot__contact">
+          <a href="tel:+41328532840">032 853 28 40</a>
+          <a href="mailto:info@garageduseyon.ch">info@garageduseyon.ch</a>
+          <a href="https://www.autoscout24.ch/fr/s/seller-60799" target="_blank" rel="noopener">AutoScout24</a>
+        </div>
+      </div>
+      <div class="foot__word" aria-hidden="true">Garage du Seyon</div>
+      <div class="foot__legal">
+        <p>© <span id="year">2026</span> Garage du Seyon SA. Tous droits réservés.</p>
+        <p>Photos des annonces : AutoScout24. Photos d’illustration : <a href="https://unsplash.com/@adryan_studio" target="_blank" rel="noopener">Puscas Adryan</a> (image de synthèse), <a href="https://unsplash.com/@zerotake" target="_blank" rel="noopener">zero take</a>, <a href="https://unsplash.com/@ninjason" target="_blank" rel="noopener">Jason Leung</a> et <a href="https://unsplash.com/@laurobot" target="_blank" rel="noopener">Lauro Fagel</a> sur Unsplash.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
