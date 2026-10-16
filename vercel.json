@@ -1,10 +1,21 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "regions": ["fra1"],
+  "functions": {
+    "api/*.js": { "includeFiles": "data/**", "maxDuration": 20 }
+  },
+  "rewrites": [
+    { "source": "/voiture/:id", "destination": "/voiture" }
+  ],
   "headers": [
     {
       "source": "/(css|js)/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
+    },
+    {
+      "source": "/admin",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Cache-Control", "value": "no-store" }]
     },
     {
       "source": "/(.*)",

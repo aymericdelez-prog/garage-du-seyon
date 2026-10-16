@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Occasion — Garage du Seyon</title>
+  <meta name="description" content="Véhicule d’occasion en vente au Garage du Seyon, Dombresson.">
+  <meta name="theme-color" content="#ffffff">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/voiture.css">
+</head>
+<body class="page-car">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-out" viewBox="0 0 16 16"><path d="M6 3.5h6.5V10M12.5 3.5 4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.3a12 12 0 0 0 6.6 6.6l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m4.5 7 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.5 5.3 5.8.7-4.3 4 1.1 5.8L12 16.6l-5.1 2.8 1.1-5.8-4.3-4 5.8-.7Z" fill="currentColor"/></symbol>
+  
+    <symbol id="i-back" viewBox="0 0 16 16"><path d="M10 3.5 5.5 8 10 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <header class="nav is-scrolled" id="nav">
+    <div class="nav__in">
+      <a class="nav__brand" href="/" aria-label="Garage du Seyon — accueil">
+        <span class="nav__s" aria-hidden="true">S</span>
+        <span class="nav__name">Garage du Seyon</span>
+      </a>
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="/#garage">Le garage</a>
+        <a href="/#occasions" class="is-active">Occasions</a>
+        <a href="/#atelier">Atelier</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="nav__end">
+        <a class="nav__tel" href="tel:+41328532840"><svg><use href="#i-phone"/></svg><span>032 853 28 40</span></a>
+        <a class="pill pill--sm" href="/#contact">Prendre rendez-vous</a>
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+      </div>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <a href="/#garage">Le garage</a>
+      <a href="/#occasions">Occasions</a>
+      <a href="/#atelier">Atelier</a>
+      <a href="/#contact">Contact</a>
+      <a class="menu__tel" href="tel:+41328532840">032 853 28 40</a>
+    </div>
+  </header>
+
+  <main class="vf" id="vf" aria-busy="true">
+    <div class="wrap">
+      <a class="vf__back" href="/#occasions"><svg><use href="#i-back"/></svg>Toutes nos occasions</a>
+
+      <!-- fiche (remplie par js/voiture.js) -->
+      <div class="vf__top">
+        <div class="gal" id="gal">
+          <button class="gal__main" id="gal-main" type="button" aria-label="Agrandir la photo">
+            <img id="gal-img" alt="">
+            <span class="gal__count" id="gal-count"></span>
+          </button>
+          <button class="gal__nav gal__nav--prev" id="gal-prev" type="button" aria-label="Photo précédente"><svg><use href="#i-back"/></svg></button>
+          <button class="gal__nav gal__nav--next" id="gal-next" type="button" aria-label="Photo suivante"><svg><use href="#i-arrow"/></svg></button>
+          <div class="gal__thumbs" id="gal-thumbs" role="tablist" aria-label="Photos"></div>
+        </div>
+
+        <aside class="vf__panel">
+          <p class="eyebrow" id="vf-brand"></p>
+          <h1 class="vf__title" id="vf-model"></h1>
+          <p class="vf__sub" id="vf-sub"></p>
+          <p class="vf__badge" id="vf-badge" hidden></p>
+          <p class="vf__price" id="vf-price"></p>
+          <p class="vf__vat">Prix TTC en francs suisses, sous réserve de vente.</p>
+          <div class="vf__cta">
+            <a class="pill" id="vf-want" href="/#contact">Je suis intéressé</a>
+            <a class="tlink" href="tel:+41328532840">032 853 28 40 <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <a class="vf__as" id="vf-as" href="#" target="_blank" rel="noopener" hidden>Voir aussi l’annonce sur AutoScout24 <svg><use href="#i-out"/></svg></a>
+        </aside>
+      </div>
+
+      <section class="vf__specs" aria-labelledby="vf-specs-title">
+        <h2 class="h2" id="vf-specs-title">Caractéristiques.</h2>
+        <dl class="specs" id="vf-specs"></dl>
+      </section>
+
+      <section class="vf__desc" id="vf-desc-wrap" hidden>
+        <h2 class="h2">Description.</h2>
+        <p class="vf__desc-text" id="vf-desc"></p>
+      </section>
+
+      <section class="vf__visit">
+        <div>
+          <h2 class="h2">Venez la voir de près.</h2>
+          <p class="lead">Route du Seyon 9, 2056 Dombresson · essai sur rendez-vous.</p>
+        </div>
+        <div class="vf__cta">
+          <a class="pill" id="vf-want-2" href="/#contact">Prendre rendez-vous</a>
+          <a class="tlink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Garage+du+Seyon+SA%2C+Route+du+Seyon+9%2C+2056+Dombresson" target="_blank" rel="noopener">Itinéraire <svg><use href="#i-out"/></svg></a>
+        </div>
+      </section>
+
+      <!-- annonce retirée -->
+      <div class="vf__gone" id="vf-gone" hidden>
+        <h1 class="headline">Cette voiture a trouvé preneur.</h1>
+        <p class="lead">Elle n’est plus disponible, mais d’autres vous attendent.</p>
+        <a class="pill" href="/#occasions">Voir nos occasions</a>
+      </div>
+    </div>
+  </main>
+
+  <dialog class="lb" id="lb" aria-label="Photos en grand">
+    <img id="lb-img" alt="">
+    <button class="lb__close" id="lb-close" type="button" aria-label="Fermer"><i></i><i></i></button>
+    <button class="lb__nav lb__nav--prev" id="lb-prev" type="button" aria-label="Photo précédente"><svg><use href="#i-back"/></svg></button>
+    <button class="lb__nav lb__nav--next" id="lb-next" type="button" aria-label="Photo suivante"><svg><use href="#i-arrow"/></svg></button>
+    <span class="lb__count" id="lb-count"></span>
+  </dialog>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <span class="foot__s" aria-hidden="true">S</span>
+          <p>Garage du Seyon SA<br>Route du Seyon 9<br>2056 Dombresson</p>
+        </div>
+        <nav class="foot__nav" aria-label="Pied de page">
+          <a href="/#garage">Le garage</a>
+          <a href="/#occasions">Occasions</a>
+          <a href="/#atelier">Atelier</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="foot__contact">
+          <a href="tel:+41328532840">032 853 28 40</a>
+          <a href="mailto:info@garageduseyon.ch">info@garageduseyon.ch</a>
+        </div>
+      </div>
+      <div class="foot__legal">
+        <p>© 2026 Garage du Seyon SA. Tous droits réservés. · Design et site © New Architect, tous droits réservés — reproduction interdite.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/voiture.js" defer></script>
+</body>
+</html>

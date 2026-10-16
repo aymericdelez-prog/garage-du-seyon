@@ -1,0 +1,344 @@
+{
+  "cars": [
+    {
+      "id": "lamborghini-urus-performante-2026",
+      "brand": "Lamborghini",
+      "model": "Urus Performante",
+      "year": 2026,
+      "km": 79,
+      "ps": 666,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 369900,
+      "cat": "other",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/lamborghini-urus-performante-11225898",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/898/11225898/1442845375.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T08:00:00.000Z"
+    },
+    {
+      "id": "lamborghini-huracan-tecnica-2026",
+      "brand": "Lamborghini",
+      "model": "Huracán Tecnica",
+      "year": 2026,
+      "km": 50,
+      "ps": 640,
+      "gear": "Robotisée",
+      "fuel": "",
+      "color": "",
+      "price": 329900,
+      "cat": "sport",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/lamborghini-huracan-tecnica-12549694",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/694/12549694/76564662.jpg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:59:00.000Z"
+    },
+    {
+      "id": "porsche-911-gt3-rs-pdk-2019",
+      "brand": "Porsche",
+      "model": "911 GT3 RS PDK",
+      "year": 2019,
+      "km": 700,
+      "ps": 521,
+      "gear": "Robotisée",
+      "fuel": "",
+      "color": "",
+      "price": 290000,
+      "cat": "sport",
+      "badge": "Pack Weissach",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/porsche-911-gt3-rs-pdk-20282142",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/142/20282142/1710798756.png?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:58:00.000Z"
+    },
+    {
+      "id": "aston-martin-dbs-superleggera-2019",
+      "brand": "Aston Martin",
+      "model": "DBS Superleggera",
+      "year": 2019,
+      "km": 14900,
+      "ps": 725,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 215000,
+      "cat": "sport",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/aston-martin-dbs-coupe-superleggera-20030153",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/153/20030153/1959330974.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:57:00.000Z"
+    },
+    {
+      "id": "porsche-911-carrera-gts-pdk-2024",
+      "brand": "Porsche",
+      "model": "911 Carrera GTS PDK",
+      "year": 2024,
+      "km": 4500,
+      "ps": 480,
+      "gear": "Robotisée",
+      "fuel": "",
+      "color": "",
+      "price": 159900,
+      "cat": "sport",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/porsche-911-carrera-gts-pdk-12689305",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/305/12689305/1929322268.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:56:00.000Z"
+    },
+    {
+      "id": "audi-rs-5-avant-tfsi-quattro-2026",
+      "brand": "Audi",
+      "model": "RS 5 Avant TFSI quattro",
+      "year": 2026,
+      "km": 15,
+      "ps": 639,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 135000,
+      "cat": "family",
+      "badge": "Neuf",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/audi-rs-5-avant-tfsi-470-kw-tiptronic-quattro-20853662",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/662/20853662/392917722.png?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:55:00.000Z"
+    },
+    {
+      "id": "porsche-911-carrera-4s-cabriolet-2005",
+      "brand": "Porsche",
+      "model": "911 Carrera 4S Cabriolet",
+      "year": 2005,
+      "km": 25900,
+      "ps": 345,
+      "gear": "Manuelle",
+      "fuel": "",
+      "color": "",
+      "price": 119900,
+      "cat": "sport",
+      "badge": "Kit usine X51",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/porsche-911-carrera-4-s-plus-cab-avec-kit-x51-20024308",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/308/20024308/615452184.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:54:00.000Z"
+    },
+    {
+      "id": "bentley-continental-gt-speed-w12-2013",
+      "brand": "Bentley",
+      "model": "Continental GT Speed W12",
+      "year": 2013,
+      "km": 12500,
+      "ps": 626,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 99900,
+      "cat": "sport",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/bentley-continental-gt-speed-60-w12-12795776",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/776/12795776/975658108.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:53:00.000Z"
+    },
+    {
+      "id": "bmw-m2-cs-2020",
+      "brand": "BMW",
+      "model": "M2 CS",
+      "year": 2020,
+      "km": 13900,
+      "ps": 450,
+      "gear": "Manuelle",
+      "fuel": "",
+      "color": "",
+      "price": 92900,
+      "cat": "sport",
+      "badge": "Boîte manuelle",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/bmw-m2-cs-boite-manuelle-20637327",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/327/20637327/485117728.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:52:00.000Z"
+    },
+    {
+      "id": "bentley-continental-gt-v8-s-2015",
+      "brand": "Bentley",
+      "model": "Continental GT V8 S",
+      "year": 2015,
+      "km": 58000,
+      "ps": 529,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 84900,
+      "cat": "sport",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/bentley-continental-gt-40-v8-s-5820644",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/644/5820644/18.jpg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:51:00.000Z"
+    },
+    {
+      "id": "audi-rs4-avant-abt-edition-2019",
+      "brand": "Audi",
+      "model": "RS4 Avant ABT Edition",
+      "year": 2019,
+      "km": 73500,
+      "ps": 530,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 64900,
+      "cat": "family",
+      "badge": "1 sur 50",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/audi-rs4-abt-edition-530cv-1-of-50-20821268",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/268/20821268/1732470622.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:50:00.000Z"
+    },
+    {
+      "id": "mercedes-benz-cls-63-amg-s-4matic-2013",
+      "brand": "Mercedes-Benz",
+      "model": "CLS 63 AMG S 4Matic",
+      "year": 2013,
+      "km": 36400,
+      "ps": 585,
+      "gear": "Robotisée",
+      "fuel": "",
+      "color": "",
+      "price": 64900,
+      "cat": "family",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/mercedes-benz-cls-63-amg-s-4matic-speedshift-mct-20062779",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/779/20062779/481338585.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:49:00.000Z"
+    },
+    {
+      "id": "audi-rs4-avant-4-2-fsi-v8-2012",
+      "brand": "Audi",
+      "model": "RS4 Avant 4.2 FSI V8",
+      "year": 2012,
+      "km": 39900,
+      "ps": 450,
+      "gear": "Robotisée",
+      "fuel": "",
+      "color": "",
+      "price": 52900,
+      "cat": "family",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/audi-rs4-avant-42-fsi-v8-quattro-s-tronic-12714163",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/163/12714163/1600682399.jpg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:48:00.000Z"
+    },
+    {
+      "id": "ford-tourneo-custom-titanium-2024",
+      "brand": "Ford",
+      "model": "Tourneo Custom Titanium",
+      "year": 2024,
+      "km": 8590,
+      "ps": 170,
+      "gear": "Automatique",
+      "fuel": "",
+      "color": "",
+      "price": 50000,
+      "cat": "other",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/ford-tourneo-custom-320-l2h1-titanium-automat-20780783",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/783/20780783/1268206454.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:47:00.000Z"
+    },
+    {
+      "id": "volkswagen-golf-gti-black-style-2024",
+      "brand": "Volkswagen",
+      "model": "Golf GTI Black Style",
+      "year": 2024,
+      "km": 22000,
+      "ps": 266,
+      "gear": "Robotisée",
+      "fuel": "",
+      "color": "",
+      "price": 34900,
+      "cat": "family",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/vw-golf-gti-20-tsi-dsg-black-style-edition-20605876",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/876/20605876/434985996.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:46:00.000Z"
+    },
+    {
+      "id": "hyundai-project-c-2-0-t-gdi-2022",
+      "brand": "Hyundai",
+      "model": "Project C 2.0 T-GDi",
+      "year": 2022,
+      "km": 75600,
+      "ps": 275,
+      "gear": "Manuelle",
+      "fuel": "",
+      "color": "",
+      "price": 33900,
+      "cat": "family",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/hyundai-nse-20t-gdi-project-c-20821574",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/574/20821574/1171126520.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:45:00.000Z"
+    },
+    {
+      "id": "volkswagen-polo-1-0-tsi-highline-2016",
+      "brand": "Volkswagen",
+      "model": "Polo 1.0 TSI Highline",
+      "year": 2016,
+      "km": 236000,
+      "ps": 110,
+      "gear": "Manuelle",
+      "fuel": "",
+      "color": "",
+      "price": 7900,
+      "cat": "other",
+      "badge": "",
+      "description": "",
+      "url": "https://www.autoscout24.ch/fr/d/vw-polo-10-tsi-bmt-highline-20212102",
+      "photos": [
+        "https://listing-images.autoscout24.ch/listing/102/20212102/1806394106.jpeg?w=1600&q=80"
+      ],
+      "createdAt": "2026-10-09T07:44:00.000Z"
+    }
+  ]
+}

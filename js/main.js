@@ -14,29 +14,6 @@
   if (hasGsap) gsap.registerPlugin(ScrollTrigger);
 
   // ================================================================ DONNÉES
-  // Stock relevé sur AutoScout24 (vendeur 60799) le 9 octobre 2026.
-  const AS = 'https://www.autoscout24.ch/fr/d/';
-  const IMG = (p) => `https://listing-images.autoscout24.ch/listing/${p}?w=900&q=80`;
-  const STOCK = [
-    { brand: 'Lamborghini', model: 'Urus Performante', year: 2026, km: 79, ps: 666, gear: 'Automatique', price: 369900, cat: 'other', url: AS + 'lamborghini-urus-performante-11225898', img: IMG('898/11225898/1442845375.jpeg') },
-    { brand: 'Lamborghini', model: 'Huracán Tecnica', year: 2026, km: 50, ps: 640, gear: 'Robotisée', price: 329900, cat: 'sport', url: AS + 'lamborghini-huracan-tecnica-12549694', img: IMG('694/12549694/76564662.jpg') },
-    { brand: 'Porsche', model: '911 GT3 RS PDK', year: 2019, km: 700, ps: 521, gear: 'Robotisée', price: 290000, cat: 'sport', badge: 'Pack Weissach', url: AS + 'porsche-911-gt3-rs-pdk-20282142', img: IMG('142/20282142/1710798756.png') },
-    { brand: 'Aston Martin', model: 'DBS Superleggera', year: 2019, km: 14900, ps: 725, gear: 'Automatique', price: 215000, cat: 'sport', url: AS + 'aston-martin-dbs-coupe-superleggera-20030153', img: IMG('153/20030153/1959330974.jpeg') },
-    { brand: 'Porsche', model: '911 Carrera GTS PDK', year: 2024, km: 4500, ps: 480, gear: 'Robotisée', price: 159900, cat: 'sport', url: AS + 'porsche-911-carrera-gts-pdk-12689305', img: IMG('305/12689305/1929322268.jpeg') },
-    { brand: 'Audi', model: 'RS 5 Avant TFSI quattro', year: 2026, km: 15, ps: 639, gear: 'Automatique', price: 135000, cat: 'family', badge: 'Neuf', url: AS + 'audi-rs-5-avant-tfsi-470-kw-tiptronic-quattro-20853662', img: IMG('662/20853662/392917722.png') },
-    { brand: 'Porsche', model: '911 Carrera 4S Cabriolet', year: 2005, km: 25900, ps: 345, gear: 'Manuelle', price: 119900, cat: 'sport', badge: 'Kit usine X51', url: AS + 'porsche-911-carrera-4-s-plus-cab-avec-kit-x51-20024308', img: IMG('308/20024308/615452184.jpeg') },
-    { brand: 'Bentley', model: 'Continental GT Speed W12', year: 2013, km: 12500, ps: 626, gear: 'Automatique', price: 99900, cat: 'sport', url: AS + 'bentley-continental-gt-speed-60-w12-12795776', img: IMG('776/12795776/975658108.jpeg') },
-    { brand: 'BMW', model: 'M2 CS', year: 2020, km: 13900, ps: 450, gear: 'Manuelle', price: 92900, cat: 'sport', badge: 'Boîte manuelle', url: AS + 'bmw-m2-cs-boite-manuelle-20637327', img: IMG('327/20637327/485117728.jpeg') },
-    { brand: 'Bentley', model: 'Continental GT V8 S', year: 2015, km: 58000, ps: 529, gear: 'Automatique', price: 84900, cat: 'sport', url: AS + 'bentley-continental-gt-40-v8-s-5820644', img: IMG('644/5820644/18.jpg') },
-    { brand: 'Audi', model: 'RS4 Avant ABT Edition', year: 2019, km: 73500, ps: 530, gear: 'Automatique', price: 64900, cat: 'family', badge: '1 sur 50', url: AS + 'audi-rs4-abt-edition-530cv-1-of-50-20821268', img: IMG('268/20821268/1732470622.jpeg') },
-    { brand: 'Mercedes-Benz', model: 'CLS 63 AMG S 4Matic', year: 2013, km: 36400, ps: 585, gear: 'Robotisée', price: 64900, cat: 'family', url: AS + 'mercedes-benz-cls-63-amg-s-4matic-speedshift-mct-20062779', img: IMG('779/20062779/481338585.jpeg') },
-    { brand: 'Audi', model: 'RS4 Avant 4.2 FSI V8', year: 2012, km: 39900, ps: 450, gear: 'Robotisée', price: 52900, cat: 'family', url: AS + 'audi-rs4-avant-42-fsi-v8-quattro-s-tronic-12714163', img: IMG('163/12714163/1600682399.jpg') },
-    { brand: 'Ford', model: 'Tourneo Custom Titanium', year: 2024, km: 8590, ps: 170, gear: 'Automatique', price: 50000, cat: 'other', url: AS + 'ford-tourneo-custom-320-l2h1-titanium-automat-20780783', img: IMG('783/20780783/1268206454.jpeg') },
-    { brand: 'Volkswagen', model: 'Golf GTI Black Style', year: 2024, km: 22000, ps: 266, gear: 'Robotisée', price: 34900, cat: 'family', url: AS + 'vw-golf-gti-20-tsi-dsg-black-style-edition-20605876', img: IMG('876/20605876/434985996.jpeg') },
-    { brand: 'Hyundai', model: 'Project C 2.0 T-GDi', year: 2022, km: 75600, ps: 275, gear: 'Manuelle', price: 33900, cat: 'family', url: AS + 'hyundai-nse-20t-gdi-project-c-20821574', img: IMG('574/20821574/1171126520.jpeg') },
-    { brand: 'Volkswagen', model: 'Polo 1.0 TSI Highline', year: 2016, km: 236000, ps: 110, gear: 'Manuelle', price: 7900, cat: 'other', url: AS + 'vw-polo-10-tsi-bmt-highline-20212102', img: IMG('102/20212102/1806394106.jpeg') },
-  ];
-
   // Horaires (minutes depuis minuit) — atelier : site du garage ; vente : AutoScout24.
   const H = (a, b) => [a[0] * 60 + a[1], b[0] * 60 + b[1]];
   const SCHED = {
@@ -203,7 +180,6 @@
     else light(1);
   }
   const factStock = $('#fact-stock');
-  if (factStock) factStock.dataset.count = STOCK.length;
 
   // compteurs hors de la scène (une seule fois, à l'apparition)
   $$('.facts [data-count]').forEach((el) => {
@@ -217,26 +193,41 @@
   });
 
   // ============================================================ OCCASIONS
+  // Annonces gérées depuis le back-office (/admin), servies par /api/cars.
   const grid = $('#stock-grid');
   const km = (v) => (v < 1000 ? v + ' km' : nf(v) + ' km');
-  grid.innerHTML = STOCK.map((c) => `
-    <a class="car" href="${c.url}" target="_blank" rel="noopener" data-cat="${c.cat}">
-      <div class="car__media"><img src="${c.img}" alt="${c.brand} ${c.model}" loading="lazy" decoding="async">${c.badge ? `<span class="car__badge">${c.badge}</span>` : ''}</div>
-      <div class="car__body">
-        <span class="car__brand">${c.brand}</span>
-        <h3 class="car__name">${c.model}</h3>
-        <p class="car__meta"><span>${c.year}</span><span>${km(c.km)}</span><span>${c.ps} ch</span><span>${c.gear}</span></p>
-        <div class="car__foot"><span class="car__price">CHF ${nf(c.price)}.–</span><span class="car__go">Voir l'annonce <svg><use href="#i-arrow"/></svg></span></div>
-      </div>
-    </a>`).join('');
-  $$('.car__media img', grid).forEach((img) => {
-    const done = () => img.classList.add('is-loaded');
-    if (img.complete && img.naturalWidth) done(); else { img.addEventListener('load', done); img.addEventListener('error', done); }
-  });
+  const esc = (v) => String(v ?? '').replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
   const chips = $$('#chips .chip');
-  const counts = { all: STOCK.length, sport: 0, family: 0, other: 0 };
-  STOCK.forEach((c) => counts[c.cat]++);
-  chips.forEach((ch) => { ch.querySelector('span').textContent = counts[ch.dataset.f]; });
+  function renderStock(list) {
+    const cars = list.slice().sort((x, y) => y.price - x.price);
+    grid.innerHTML = cars.length ? cars.map((c) => `
+    <a class="car" href="/voiture/${encodeURIComponent(c.id)}" data-cat="${esc(c.cat)}">
+      <div class="car__media"><img src="${esc(c.photos[0])}" alt="${esc(c.brand)} ${esc(c.model)}" loading="lazy" decoding="async">${c.badge ? `<span class="car__badge">${esc(c.badge)}</span>` : ''}</div>
+      <div class="car__body">
+        <span class="car__brand">${esc(c.brand)}</span>
+        <h3 class="car__name">${esc(c.model)}</h3>
+        <p class="car__meta">${[c.year, c.km || c.km === 0 ? km(c.km) : '', c.ps ? c.ps + ' ch' : '', c.gear].filter(Boolean).map((v) => `<span>${esc(v)}</span>`).join('')}</p>
+        <div class="car__foot"><span class="car__price">CHF ${nf(c.price)}.–</span><span class="car__go">Voir la fiche <svg><use href="#i-arrow"/></svg></span></div>
+      </div>
+    </a>`).join('') : '<p class="stock__empty">Aucun véhicule en vitrine pour le moment. Appelez-nous au 032 853 28 40.</p>';
+    $$('.car__media img', grid).forEach((img) => {
+      const done = () => img.classList.add('is-loaded');
+      if (img.complete && img.naturalWidth) done(); else { img.addEventListener('load', done); img.addEventListener('error', done); }
+    });
+    const counts = { all: cars.length, sport: 0, family: 0, other: 0 };
+    cars.forEach((c) => { if (c.cat in counts) counts[c.cat]++; });
+    chips.forEach((ch) => { ch.querySelector('span').textContent = counts[ch.dataset.f]; });
+    if (factStock) { factStock.dataset.count = cars.length; factStock.textContent = cars.length; }
+    if (hasGsap) {
+      gsap.set('.car', { opacity: 0, y: 30 });
+      ScrollTrigger.batch('.car', { start: 'top 92%', once: true, onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: 0.07 }) });
+      ScrollTrigger.refresh();
+    }
+  }
+  fetch('/api/cars').then((r) => (r.ok ? r.json() : Promise.reject()))
+    .catch(() => fetch('/data/seed.json').then((r) => r.json()))
+    .then((d) => renderStock(d.cars || []))
+    .catch(() => renderStock([]));
   chips.forEach((ch) => ch.addEventListener('click', () => {
     const f = ch.dataset.f;
     chips.forEach((c) => { c.classList.toggle('is-on', c === ch); c.setAttribute('aria-selected', c === ch ? 'true' : 'false'); });
@@ -318,6 +309,16 @@
 
   // ============================================================= FORMULAIRE
   const form = $('#form'), fmsg = $('#form-msg');
+  const wanted = new URLSearchParams(location.search).get('voiture');
+  if (wanted) {
+    form.elements.message.value = `Bonjour, je suis intéressé(e) par : ${wanted.slice(0, 160)}. Ce véhicule est-il toujours disponible ? `;
+    const r = form.querySelector('input[name="sujet"][value^="Achat"]'); if (r) r.checked = true;
+  }
+  // arrivée depuis une fiche (/?voiture=…#contact) : descendre au formulaire
+  if (location.hash.length > 1) {
+    const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (t) window.addEventListener('load', () => setTimeout(() => scrollToY(t.getBoundingClientRect().top + window.scrollY, { duration: 1.2 }), 200));
+  }
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let ok = true;
@@ -345,8 +346,6 @@
     $$('.reveal').filter((el) => !el.closest('.grid')).forEach((el) => {
       ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out' }) });
     });
-    gsap.set('.car', { opacity: 0, y: 30 });
-    ScrollTrigger.batch('.car', { start: 'top 92%', once: true, onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: 0.07 }) });
     if (word) {
       gsap.set('.foot__word .ch', { yPercent: 60, opacity: 0 });
       ScrollTrigger.create({ trigger: word, start: 'top 95%', once: true, onEnter: () => gsap.to('.foot__word .ch', { yPercent: 0, opacity: 1, duration: 1.2, ease: 'expo.out', stagger: 0.03 }) });

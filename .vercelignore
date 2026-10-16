@@ -1,0 +1,4 @@
+.data
+dev-server.js
+node_modules
+*.local.txt

@@ -1,0 +1,9 @@
+{
+  "name": "garage-du-seyon",
+  "private": true,
+  "type": "module",
+  "description": "Site du Garage du Seyon avec back-office des annonces.",
+  "engines": { "node": "22.x" },
+  "scripts": { "dev": "node dev-server.js 5179" },
+  "dependencies": { "@vercel/blob": "^1.1.1" }
+}
