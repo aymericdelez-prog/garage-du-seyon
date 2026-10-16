@@ -422,3 +422,9 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
   }
   .chap__copy { padding: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; }
 }
+
+/* voile des longs sauts (ancres) */
+.veil { position: fixed; inset: 0; z-index: 90; background: #fff; opacity: 0; pointer-events: none; transition: opacity 0.26s ease; }
+.veil.is-on { opacity: 1; pointer-events: auto; }
+.veil.is-instant { transition: none; }
+html.arrive body::after { content: ""; position: fixed; inset: 0; z-index: 89; background: #fff; }

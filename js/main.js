@@ -61,9 +61,22 @@
   const scrollToY = (y, opts) => { if (lenis) lenis.scrollTo(y, Object.assign({ duration: 1.6, force: true }, opts)); else window.scrollTo({ top: y, behavior: 'smooth' }); };
   // descend vers un élément ; si la page a bougé pendant le trajet (images, annonces chargées), corrige à l'arrivée
   const topOf = (el) => el.getBoundingClientRect().top + window.scrollY;
-  const goTo = (el, opts) => scrollToY(topOf(el), Object.assign({}, opts, {
-    onComplete: () => { if (Math.abs(topOf(el) - window.scrollY) > 4) scrollToY(topOf(el), { duration: 0.6 }); },
-  }));
+  const settle = (el) => { if (Math.abs(topOf(el) - window.scrollY) > 4) scrollToY(topOf(el), { immediate: true }); };
+  // voile blanc : un long saut (vers le formulaire par ex.) ne rejoue pas les animations traversées
+  const veil = document.createElement('div');
+  veil.className = 'veil';
+  document.body.appendChild(veil);
+  const jump = (el) => {
+    veil.classList.add('is-on');
+    setTimeout(() => {
+      scrollToY(topOf(el), { immediate: true });
+      requestAnimationFrame(() => { settle(el); if (hasGsap) ScrollTrigger.update(); veil.classList.remove('is-on'); });
+    }, 260);
+  };
+  const goTo = (el, opts) => {
+    if (Math.abs(topOf(el) - window.scrollY) > window.innerHeight * 1.5) return jump(el);
+    scrollToY(topOf(el), Object.assign({}, opts, { onComplete: () => settle(el) }));
+  };
 
   // ================================================================ EN-TÊTE
   const nav = $('#nav');
@@ -322,13 +335,17 @@
   if (location.hash.length > 1) {
     const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (t) {
-      const loaded = document.readyState === 'complete' ? Promise.resolve() : new Promise((r) => window.addEventListener('load', r, { once: true }));
-      Promise.all([loaded, stockReady.catch(() => {})]).then(() => setTimeout(() => {
+      veil.classList.add('is-on', 'is-instant'); // la page reste masquée jusqu'au formulaire
+      // on attend les annonces et les polices (qui fixent la hauteur de la page), 1,5 s au plus
+      const ready = Promise.all([stockReady.catch(() => {}), document.fonts ? document.fonts.ready : null]);
+      Promise.race([ready, new Promise((r) => setTimeout(r, 1500))]).then(() => setTimeout(() => {
         if (hasGsap) ScrollTrigger.refresh();
-        goTo(t, { duration: 1.2 });
-      }, 150));
+        veil.classList.remove('is-instant');
+        jump(t);
+      }, 60));
     }
   }
+  document.documentElement.classList.remove('arrive');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let ok = true;
