@@ -441,3 +441,12 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
 .veil.is-on { opacity: 1; pointer-events: auto; }
 .veil.is-instant { transition: none; }
 html.arrive body::after { content: ""; position: fixed; inset: 0; z-index: 89; background: #fff; }
+
+/* Showroom sur téléphone : la photo (en paysage) est cadrée pour montrer la voiture entière,
+   sur un fond sombre qui prolonge le hall. */
+@media (max-aspect-ratio: 5/6) {
+  .showroom__frame { background: #121214; }
+  .showroom__frame img { position: absolute; left: 0; top: calc(44% - 52vw); height: 104vw; object-position: 50% 62%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent); }
+}
