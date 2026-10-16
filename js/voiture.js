@@ -17,7 +17,7 @@
   });
 
   const gone = () => {
-    document.title = 'Véhicule vendu — Garage du Seyon';
+    document.title = 'Véhicule vendu · Garage du Seyon';
     $('#vf').classList.add('is-gone');
     $('#vf-gone').hidden = false;
     $('#vf').removeAttribute('aria-busy');
@@ -33,7 +33,7 @@
 
   function render(c) {
     const name = `${c.brand} ${c.model}`;
-    document.title = `${name}${c.year ? ' (' + c.year + ')' : ''} — Garage du Seyon`;
+    document.title = `${name}${c.year ? ' (' + c.year + ')' : ''} · Garage du Seyon`;
     const desc = document.querySelector('meta[name="description"]');
     if (desc) desc.content = `${name}${c.year ? ', ' + c.year : ''} · CHF ${nf(c.price)}.– · en vente au Garage du Seyon, Dombresson.`;
 

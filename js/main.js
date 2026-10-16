@@ -331,8 +331,8 @@
     if (!ok) { fmsg.textContent = 'Merci de compléter votre nom, votre e-mail et votre message.'; return; }
     const fd = new FormData(form);
     const sujet = fd.get('sujet'), nom = fd.get('nom').trim(), mail = fd.get('email').trim(), tel = fd.get('tel').trim();
-    const body = `${fd.get('message').trim()}\n\n— ${nom}\n${mail}${tel ? '\n' + tel : ''}`;
-    location.href = `mailto:info@garageduseyon.ch?subject=${encodeURIComponent(`[Site] ${sujet} — ${nom}`)}&body=${encodeURIComponent(body)}`;
+    const body = `${fd.get('message').trim()}\n\n${nom}\n${mail}${tel ? '\n' + tel : ''}`;
+    location.href = `mailto:info@garageduseyon.ch?subject=${encodeURIComponent(`[Site] ${sujet} : ${nom}`)}&body=${encodeURIComponent(body)}`;
     fmsg.textContent = 'Votre messagerie s’ouvre avec le message prêt à partir.';
   });
 
