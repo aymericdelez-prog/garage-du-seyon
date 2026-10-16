@@ -397,7 +397,20 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
   .br-d { display: none; }
 }
 @media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .car { border-radius: 18px; }
+  .car__badge { left: 8px; top: 8px; padding: 3px 8px; font-size: 10px; }
+  .car__body { padding: 12px 12px 14px; gap: 2px; }
+  .car__brand { font-size: 11px; }
+  .car__name { font-size: 15px; line-height: 1.25; }
+  .car__meta { font-size: 12px; gap: 2px 6px; }
+  .car__meta span + span::before { margin-right: 6px; }
+  .car__meta span:nth-child(n+3) { display: none; }
+  .car__body { display: flex; flex-direction: column; }
+  .car__foot { margin-top: auto; padding-top: 10px; }
+  .car__meta { margin-bottom: 10px; }
+  .car__price { font-size: 15px; }
+  .car__go { display: none; }
   .bento { grid-template-columns: 1fr; }
   .card--xl, .card--tall, .card--wide { grid-column: auto; }
   .showroom__frame { clip-path: inset(18% 6% 18% 6% round 22px); }
@@ -411,14 +424,14 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
     --ct: calc(var(--mid) - var(--band) * 0.47);
     --cb: calc(100svh - var(--mid) - var(--band) * 0.47);
     --cx: 3%; --cr: 22px; --ps: 0.94; --py: 0;
-    background: linear-gradient(180deg, #6d5463 0%, #6d5463 calc(var(--mid) - var(--band) * 0.5), #d0bfba calc(var(--mid) + var(--band) * 0.5), #ddd0cc 100%);
+    background: linear-gradient(180deg, #6d5463 0%, #7a626e calc(var(--mid) - var(--band) * 0.5), #a89599 var(--mid), #d0bfba calc(var(--mid) + var(--band) * 0.5), #ddd0cc 100%);
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: calc(var(--nav-h) + 56px) var(--gut) 40px;
   }
   .chap__media {
     inset: auto 0; top: calc(var(--mid) - var(--band) / 2); height: var(--band); overflow: hidden;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 12%), #000 calc(100% - var(--k) * 12%), transparent);
-    mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 12%), #000 calc(100% - var(--k) * 12%), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 32%), #000 calc(100% - var(--k) * 24%), transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 32%), #000 calc(100% - var(--k) * 24%), transparent);
   }
   .chap__copy { padding: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; }
 }
