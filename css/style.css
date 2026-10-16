@@ -145,9 +145,9 @@ svg { display: block; }
 .chap__pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: #fff; }
 .chap__head { position: absolute; left: 0; right: 0; top: calc(var(--nav-h) + 6vh); text-align: center; padding: 0 var(--gut); z-index: 1; }
 .chap__frame {
-  --k: 0; --ct: 37%; --cx: 7%; --cb: 5%; --cr: 28px; --ps: 0.88; --py: 11;
+  --k: 0; --ct: 37%; --cx: 7%; --cb: 5%; --cr: 28px; --ps: 0.88; --py: 5;
   position: absolute; inset: 0; margin: 0; z-index: 2; overflow: hidden;
-  background: linear-gradient(180deg, #6d5463 0%, #7a626e 40%, #a89599 75%, #d0bfba 100%); /* teintes du studio */
+  background: linear-gradient(180deg, #a9c4df 0%, #9a958d 40%, #c9bfb2 75%, #d8cfc3 100%); /* teintes de la photo */
   display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
   padding: calc(var(--nav-h) + 7vh) var(--gut) clamp(28px, 5vh, 56px);
   clip-path: inset(calc(var(--ct) * (1 - var(--k))) calc(var(--cx) * (1 - var(--k))) calc(var(--cb) * (1 - var(--k))) calc(var(--cx) * (1 - var(--k))) round calc(var(--cr) * (1 - var(--k))));
@@ -424,7 +424,7 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
     --ct: calc(var(--mid) - var(--band) * 0.47);
     --cb: calc(100svh - var(--mid) - var(--band) * 0.47);
     --cx: 3%; --cr: 22px; --ps: 0.94; --py: 0;
-    background: linear-gradient(180deg, #6d5463 0%, #7a626e calc(var(--mid) - var(--band) * 0.5), #a89599 var(--mid), #d0bfba calc(var(--mid) + var(--band) * 0.5), #ddd0cc 100%);
+    background: linear-gradient(180deg, #b3cbe4 0%, #a9c4df calc(var(--mid) - var(--band) * 0.5), #b9b1a6 var(--mid), #d8cfc3 calc(var(--mid) + var(--band) * 0.5), #e2dbd1 100%);
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: calc(var(--nav-h) + 56px) var(--gut) 40px;
   }
@@ -458,3 +458,15 @@ html.arrive body::after { content: ""; position: fixed; inset: 0; z-index: 89; b
 @media (max-width: 340px) {
   .panel--form .seg { grid-template-columns: repeat(2, minmax(0, 1fr)); border-radius: 22px; }
 }
+
+/* animation de chargement */
+.boot { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; background: #fff; clip-path: inset(0% 0% 0% 0%); }
+.boot__in { display: grid; justify-items: center; gap: 14px; text-align: center; }
+.boot__s { width: 64px; height: 64px; border-radius: 17px; display: grid; place-items: center; background: var(--ink); color: #fff; font-family: var(--f-display); font-weight: 700; font-style: italic; font-size: 34px; position: relative; opacity: 0; }
+.boot__s::after { content: ""; position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--rosso); top: -3px; right: -3px; box-shadow: 0 0 0 3px #fff; }
+.boot__name { margin: 8px 0 0; display: flex; gap: 0.28em; overflow: hidden; padding-bottom: 0.08em; font-family: var(--f-display); font-weight: 600; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.04em; }
+.boot__name span { display: inline-block; transform: translateY(110%); }
+.boot__place { margin: 0; font-size: 14px; color: var(--muted); opacity: 0; }
+.boot__bar { display: block; width: 160px; height: 2px; margin-top: 18px; border-radius: 2px; background: var(--smoke); overflow: hidden; }
+.boot__bar b { display: block; height: 100%; background: var(--rosso); transform: scaleX(0); transform-origin: left; }
+html.arrive .boot, html.no-intro .boot, html:not(.js) .boot { display: none; }

@@ -125,10 +125,35 @@
   // glisse et zoome vers les détails.
   if (hasGsap) {
     // ouverture
-    gsap.timeline({ delay: 0.15 })
+    const heroIn = gsap.timeline({ paused: true })
       .fromTo('.cx-hero__eyebrow', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1, ease: 'expo.out' }, 0)
       .fromTo('[data-hero] .ln > span', { y: 0, yPercent: 110 }, { y: 0, yPercent: 0, duration: 1.3, ease: 'expo.out', stagger: 0.09 }, 0.08)
       .fromTo('.chap--hero .chap__frame', { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 1.6, ease: 'expo.out', clearProps: 'transform' }, 0.3);
+
+    // animation de chargement : le monogramme, le nom, une ligne qui se remplit pendant que
+    // la photo d'accueil charge, puis le rideau se lève (une seule fois par visite)
+    const intro = $('#boot');
+    const skip = !intro || document.documentElement.classList.contains('arrive') || document.documentElement.classList.contains('no-intro');
+    if (skip) { if (intro) intro.remove(); heroIn.delay(0.15).play(); }
+    else {
+      try { sessionStorage.setItem('gds-intro', '1'); } catch (e) {}
+      if (lenis) lenis.stop();
+      const heroImg = $('.chap--hero .chap__img');
+      const imgReady = new Promise((r) => { if (!heroImg || (heroImg.complete && heroImg.naturalWidth)) r(); else { heroImg.addEventListener('load', r, { once: true }); heroImg.addEventListener('error', r, { once: true }); } });
+      const minTime = new Promise((r) => setTimeout(r, 1500));
+      gsap.timeline()
+        .fromTo('.boot__s', { scale: 0.6, opacity: 0, rotate: -12 }, { scale: 1, opacity: 1, rotate: 0, duration: 1, ease: 'expo.out' }, 0)
+        .fromTo('.boot__name span', { yPercent: 110 }, { yPercent: 0, duration: 1, ease: 'expo.out', stagger: 0.08 }, 0.2)
+        .fromTo('.boot__place', { opacity: 0 }, { opacity: 1, duration: 0.8 }, 0.6)
+        .fromTo('#boot-bar', { scaleX: 0 }, { scaleX: 0.7, duration: 1.4, ease: 'power2.out' }, 0.3);
+      Promise.race([Promise.all([imgReady, minTime]), new Promise((r) => setTimeout(r, 3500))]).then(() => {
+        gsap.timeline({ onComplete: () => { intro.remove(); if (lenis) lenis.start(); } })
+          .to('#boot-bar', { scaleX: 1, duration: 0.35, ease: 'power2.inOut' })
+          .to('.boot__in', { y: -30, opacity: 0, duration: 0.5, ease: 'power2.in' }, '+=0.05')
+          .to(intro, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.9, ease: 'expo.inOut' }, '-=0.15')
+          .add(() => heroIn.play(), '-=0.45');
+      });
+    }
 
     const portrait = window.matchMedia('(max-aspect-ratio: 5/6)');
     $$('.chap').forEach((ch) => {
