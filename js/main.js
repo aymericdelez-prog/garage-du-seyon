@@ -58,7 +58,12 @@
       requestAnimationFrame(r);
     }
   }
-  const scrollToY = (y, opts) => { if (lenis) lenis.scrollTo(y, Object.assign({ duration: 1.6 }, opts)); else window.scrollTo({ top: y, behavior: 'smooth' }); };
+  const scrollToY = (y, opts) => { if (lenis) lenis.scrollTo(y, Object.assign({ duration: 1.6, force: true }, opts)); else window.scrollTo({ top: y, behavior: 'smooth' }); };
+  // descend vers un élément ; si la page a bougé pendant le trajet (images, annonces chargées), corrige à l'arrivée
+  const topOf = (el) => el.getBoundingClientRect().top + window.scrollY;
+  const goTo = (el, opts) => scrollToY(topOf(el), Object.assign({}, opts, {
+    onComplete: () => { if (Math.abs(topOf(el) - window.scrollY) > 4) scrollToY(topOf(el), { duration: 0.6 }); },
+  }));
 
   // ================================================================ EN-TÊTE
   const nav = $('#nav');
@@ -85,8 +90,7 @@
     if (!t) return;
     e.preventDefault();
     setMenu(false);
-    const y = id === '#top' || id === '#' || id === '#accueil' ? 0 : t.getBoundingClientRect().top + window.scrollY;
-    scrollToY(y);
+    if (id === '#top' || id === '#' || id === '#accueil') scrollToY(0); else goTo(t);
   });
 
   // lien actif
@@ -224,7 +228,7 @@
       ScrollTrigger.refresh();
     }
   }
-  fetch('/api/cars').then((r) => (r.ok ? r.json() : Promise.reject()))
+  const stockReady = fetch('/api/cars').then((r) => (r.ok ? r.json() : Promise.reject()))
     .catch(() => fetch('/data/seed.json').then((r) => r.json()))
     .then((d) => renderStock(d.cars || []))
     .catch(() => renderStock([]));
@@ -317,7 +321,13 @@
   // arrivée depuis une fiche (/?voiture=…#contact) : descendre au formulaire
   if (location.hash.length > 1) {
     const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (t) window.addEventListener('load', () => setTimeout(() => scrollToY(t.getBoundingClientRect().top + window.scrollY, { duration: 1.2 }), 200));
+    if (t) {
+      const loaded = document.readyState === 'complete' ? Promise.resolve() : new Promise((r) => window.addEventListener('load', r, { once: true }));
+      Promise.all([loaded, stockReady.catch(() => {})]).then(() => setTimeout(() => {
+        if (hasGsap) ScrollTrigger.refresh();
+        goTo(t, { duration: 1.2 });
+      }, 150));
+    }
   }
   form.addEventListener('submit', (e) => {
     e.preventDefault();
