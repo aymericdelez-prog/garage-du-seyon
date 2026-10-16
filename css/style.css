@@ -450,3 +450,11 @@ html.arrive body::after { content: ""; position: fixed; inset: 0; z-index: 89; b
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
     mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent); }
 }
+
+/* Sujets du formulaire : toujours sur une ligne, répartis à parts égales */
+.panel--form .seg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; }
+.panel--form .seg span { padding: 9px 4px; text-align: center; white-space: nowrap; }
+@media (max-width: 420px) { .panel--form .seg span { font-size: 13px; padding: 8px 2px; } }
+@media (max-width: 340px) {
+  .panel--form .seg { grid-template-columns: repeat(2, minmax(0, 1fr)); border-radius: 22px; }
+}
