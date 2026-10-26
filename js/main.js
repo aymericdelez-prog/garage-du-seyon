@@ -178,6 +178,21 @@
       const frame = $('.chap__frame', ch), head = $('.chap__head', ch), media = $('.chap__media', ch), img = $('.chap__img', ch);
       const copies = $$('.chap__copy', ch), dotsBox = $('.chap__dots', ch), dots = $$('.chap__dots i', ch);
       // au départ, l'image est réduite à la taille de la carte pour montrer la voiture entière
+      // la carte commence toujours sous le titre, quelle que soit la hauteur de l'écran
+      const fitCard = () => {
+        frame.style.removeProperty('--ct');
+        frame.style.removeProperty('--py');
+        const H = frame.clientHeight, cs = getComputedStyle(frame);
+        if (!head || !H) return;
+        const pct = (k) => { const s = cs.getPropertyValue(k).trim(); return s.endsWith('%') ? parseFloat(s) : (parseFloat(s) / H) * 100; };
+        const below = ((head.offsetTop + head.offsetHeight + 18) / H) * 100;
+        const ct = Math.max(pct('--ct'), below), cb = pct('--cb');
+        frame.style.setProperty('--ct', ct + '%');
+        frame.style.setProperty('--py', (ct - cb) / 2);
+      };
+      fitCard();
+      if (hasGsap) ScrollTrigger.addEventListener('refreshInit', fitCard);
+      if (document.fonts) document.fonts.ready.then(() => { fitCard(); if (hasGsap) ScrollTrigger.refresh(); });
       const card = () => {
         const cs = getComputedStyle(frame), v = (k) => parseFloat(cs.getPropertyValue(k));
         return { s: v('--ps') || 0.88, y: v('--py') || 0 };
