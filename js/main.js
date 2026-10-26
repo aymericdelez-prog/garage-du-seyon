@@ -119,6 +119,18 @@
     ['accueil', 'garage', 'occasions', 'atelier', 'showroom', 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   }
 
+  // vidéo d'accueil : verticale sur téléphone, horizontale ailleurs
+  const heroVideo = $('video[data-src]');
+  if (heroVideo) {
+    const tall = window.matchMedia('(max-aspect-ratio: 5/6)');
+    const pick = () => {
+      const src = tall.matches ? heroVideo.dataset.srcPortrait : heroVideo.dataset.src;
+      if (heroVideo.getAttribute('src') !== src) { heroVideo.src = src; heroVideo.play().catch(() => {}); }
+    };
+    pick();
+    if (tall.addEventListener) tall.addEventListener('change', pick);
+  }
+
   // ============================================================== VITRINE
   // Comme sur les pages produit d'Apple : pas de 3D, une image de studio que le
   // défilement pilote — la carte s'ouvre en plein cadre, puis la « caméra »

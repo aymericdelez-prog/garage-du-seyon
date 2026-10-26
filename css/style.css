@@ -419,23 +419,19 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
    qui se fond dans le blanc du studio ; la carte de départ épouse ce bandeau,
    puis le bandeau remonte pour laisser la place au texte. */
 @media (max-aspect-ratio: 5/6) {
+  /* téléphone : vidéo verticale en plein écran, textes en bas sur un dégradé sombre */
   .chap__frame {
-    --band: 75vw; --mid: calc(60svh - var(--k) * 19svh);
-    --ct: calc(var(--mid) - var(--band) * 0.47);
-    --cb: calc(100svh - var(--mid) - var(--band) * 0.47);
-    --cx: 3%; --cr: 22px; --ps: 0.94; --py: 0;
+    --ct: 33%; --cx: 4%; --cb: 5%; --cr: 22px; --ps: 0.92; --py: 14;
     background: #050505;
     display: flex; flex-direction: column; justify-content: flex-end;
-    padding: calc(var(--nav-h) + 56px) var(--gut) 40px;
+    padding: calc(var(--nav-h) + 56px) var(--gut) 92px;
   }
-  .chap__media {
-    inset: auto 0; top: calc(var(--mid) - var(--band) / 2); height: var(--band); overflow: hidden;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 32%), #000 calc(100% - var(--k) * 24%), transparent);
-    mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 32%), #000 calc(100% - var(--k) * 24%), transparent);
-  }
+  .chap__frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: var(--k);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 30%, rgba(0, 0, 0, 0) 55%); }
+  .chap__copies { z-index: 2; }
   .chap__copy { padding: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; color: #fff; }
-  .chap__copy .chap__lead { color: rgba(255, 255, 255, 0.72); }
-  .chap__copy .chap__kicker { color: rgba(255, 255, 255, 0.6); }
+  .chap__copy .chap__lead { color: rgba(255, 255, 255, 0.78); }
+  .chap__copy .chap__kicker { color: rgba(255, 255, 255, 0.62); }
   .chap__copy .tlink { color: #fff; }
 }
 
