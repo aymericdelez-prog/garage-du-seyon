@@ -139,7 +139,13 @@
       try { sessionStorage.setItem('gds-intro', '1'); } catch (e) {}
       if (lenis) lenis.stop();
       const heroImg = $('.chap--hero .chap__img');
-      const imgReady = new Promise((r) => { if (!heroImg || (heroImg.complete && heroImg.naturalWidth)) r(); else { heroImg.addEventListener('load', r, { once: true }); heroImg.addEventListener('error', r, { once: true }); } });
+      const imgReady = new Promise((r) => {
+        if (!heroImg) return r();
+        const isVideo = heroImg.tagName === 'VIDEO';
+        if (isVideo ? heroImg.readyState >= 2 : heroImg.complete && heroImg.naturalWidth) return r();
+        heroImg.addEventListener(isVideo ? 'loadeddata' : 'load', r, { once: true });
+        heroImg.addEventListener('error', r, { once: true });
+      });
       const minTime = new Promise((r) => setTimeout(r, 1500));
       gsap.timeline()
         .fromTo('.boot__s', { scale: 0.6, opacity: 0, rotate: -12 }, { scale: 1, opacity: 1, rotate: 0, duration: 1, ease: 'expo.out' }, 0)

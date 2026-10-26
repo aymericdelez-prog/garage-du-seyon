@@ -147,7 +147,7 @@ svg { display: block; }
 .chap__frame {
   --k: 0; --ct: 37%; --cx: 7%; --cb: 5%; --cr: 28px; --ps: 0.88; --py: 5;
   position: absolute; inset: 0; margin: 0; z-index: 2; overflow: hidden;
-  background: linear-gradient(180deg, #a9c4df 0%, #9a958d 40%, #c9bfb2 75%, #d8cfc3 100%); /* teintes de la photo */
+  background: #050505; /* fond du studio de la vidéo */
   display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr);
   padding: calc(var(--nav-h) + 7vh) var(--gut) clamp(28px, 5vh, 56px);
   clip-path: inset(calc(var(--ct) * (1 - var(--k))) calc(var(--cx) * (1 - var(--k))) calc(var(--cb) * (1 - var(--k))) calc(var(--cx) * (1 - var(--k))) round calc(var(--cr) * (1 - var(--k))));
@@ -424,7 +424,7 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
     --ct: calc(var(--mid) - var(--band) * 0.47);
     --cb: calc(100svh - var(--mid) - var(--band) * 0.47);
     --cx: 3%; --cr: 22px; --ps: 0.94; --py: 0;
-    background: linear-gradient(180deg, #b3cbe4 0%, #a9c4df calc(var(--mid) - var(--band) * 0.5), #b9b1a6 var(--mid), #d8cfc3 calc(var(--mid) + var(--band) * 0.5), #e2dbd1 100%);
+    background: #050505;
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: calc(var(--nav-h) + 56px) var(--gut) 40px;
   }
@@ -433,7 +433,10 @@ button.tlink { font: inherit; font-size: 17px; letter-spacing: inherit; cursor: 
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 32%), #000 calc(100% - var(--k) * 24%), transparent);
     mask-image: linear-gradient(to bottom, transparent, #000 calc(var(--k) * 32%), #000 calc(100% - var(--k) * 24%), transparent);
   }
-  .chap__copy { padding: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; }
+  .chap__copy { padding: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; color: #fff; }
+  .chap__copy .chap__lead { color: rgba(255, 255, 255, 0.72); }
+  .chap__copy .chap__kicker { color: rgba(255, 255, 255, 0.6); }
+  .chap__copy .tlink { color: #fff; }
 }
 
 /* voile des longs sauts (ancres) */
